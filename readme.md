@@ -6,7 +6,7 @@ Este sistema fue desarrollado para simular el funcionamiento de una aplicación 
 Su objetivo es organizar y facilitar el registro de clientes, destinos disponibles y operaciones de venta de pasajes. Además, incorpora una funcionalidad de "Botón de Arrepentimiento"
 que permite simular la anulación de una venta reciente.
 
-**Instalción** 
+**Instalación** 
 - Tener instalado Python.
 - Descargá o cloná la carpeta del proyecto que contiene el archivo `main.py`.
 - Abrí una terminal en la carpeta del archivo.
