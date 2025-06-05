@@ -7,7 +7,7 @@ Este sistema fue desarrollado para simular el funcionamiento de una aplicación 
 Su objetivo es organizar y facilitar el registro de clientes, destinos disponibles y operaciones de venta de pasajes. Además, incorpora una funcionalidad de "Botón de Arrepentimiento"
 que permite simular la anulación de una venta reciente.
 
-Instalción 
+Instalación 
 - Tener instalado Python.
 - Descargá o cloná la carpeta del proyecto que contiene el archivo `main.py`.
 - Abrí una terminal en la carpeta del archivo.
@@ -22,10 +22,20 @@ Integrantes del grupo
 - Valeria, Cortez DNI: 29.768.588
 """
 
-print("Bienvenidos a SkyRoute - Sistema de Gestión de Pasajes")
+from clientes import (
+    ver_clientes,
+    agregar_cliente,
+    modificar_cliente,
+    eliminar_cliente,
+    buscar_cliente_por_dni
+)
 
-salir = False
-while not salir:
+from destinos import gestionar_destinos, listar_destinos
+from ventas import registrar_venta, consultar_ventas
+from arrepentimiento import boton_arrepentimiento
+
+# Menú principal del sistema
+def menu_principal():
     print("\n-- MENÚ PRINCIPAL: --")
     print("1. Gestionar Clientes")
     print("2. Gestionar Destinos")
@@ -33,141 +43,83 @@ while not salir:
     print("4. Consultar Ventas")
     print("5. Botón de Arrepentimiento")
     print("6. Salir")
+    return input("Seleccione una opción: ")
 
-    opcion = input("Seleccione una opción: ")
+# Menú de gestión de clientes
+def gestionar_clientes():
+    while True:
+        print("\n-- GESTIONAR CLIENTES --")
+        print("1. Ver lista de clientes")
+        print("2. Agregar nuevo cliente")
+        print("3. Agregar nueva empresa")
+        print("4. Modificar cliente")
+        print("5. Eliminar cliente")
+        print("6. Buscar clientes")
+        print("7. Volver al menú principal")
+        subopcion = input("Seleccione una opción: ")
+        if subopcion == "1":
+            ver_clientes()
+        elif subopcion == "2":
+            agregar_cliente()
+        elif subopcion == "4":
+            modificar_cliente()
+        elif subopcion == "5":
+            eliminar_cliente()
+        elif subopcion == "6":
+            buscar_cliente_por_dni()
+        elif subopcion == "7":
+            break
+        else:
+            print("Opción no válida.")
 
-    if opcion == "1":
-        while True:
-            print("\n-- GESTIONAR CLIENTES --")
-            print("1. Ver lista de clientes")
-            print("2. Agregar nuevo cliente")
-            print("3. Agregar nueva empresa")
-            print("4. Modificar cliente")
-            print("5. Eliminar cliente")
-            print("6. Buscar clientes")
-            print("7. Volver al menú principal")
-            subopcion = input("Seleccione una opción: ")
-            if subopcion == "1":
-                print("Lista de clientes")
-            elif subopcion == "2":
-                print("Agregar nuevo cliente")
-                print("Ingrese DNI de cliente: ...") ## Luego se desarrollarán las funciones para almacenar datos
-                print("Ingrese correo electrónico: ... ")
-                print("Ingrese fecha de nacimiento: ...")
-            elif subopcion == "3":
-                print("Agregar nueva empresa")
-                print ("Ingrese CUIL de empresa: ...")   
-            elif subopcion == "4":
-                print("Modificar cliente")
-            elif subopcion == "5":
-                print("Eliminar cliente")
-            elif subopcion == "6":
-                print("Buscar clientes")
-                print("Ingrese DNI de cliente: ...")
-            elif subopcion == "7":
-                print("Volviendo al menú principal")
-                break
-            else:
-                print("Opción no válida")
+# Registro de una nueva venta
+def gestionar_venta():
+    print("\n-- REGISTRAR VENTA --")
+    print("Clientes disponibles:")
+    ver_clientes()
+    id_cliente = input("Ingrese el ID del cliente: ").strip()
+    if not id_cliente.isdigit():
+        print("ID de cliente no válido.")
+        return
 
-    elif opcion == "2":
-        while True:
-            print("\n-- GESTIONAR DESTINOS --")
-            print("1. Buscar destino")
-            print("2. Agregar nuevo destino")
-            print("3. Eliminar destino")
-            print("4. Volver al menú principal")
-            subopcion = input("Seleccione una opción: ")
-            if subopcion == "1":
-                print("Buscar destino")
-                print("Ingrese destino: ...")
-            elif subopcion == "2":
-                print("Agregar nuevo destino")
-                print("Ingrese datos del nuevo destino: ...")
-            elif subopcion == "3":
-                print("Eliminar destino")
-                print("Ingrese destino para eliminar: ")                 
-            elif subopcion == "4":
-                print("Volviendo al menú principal")
-                break
-            else:
-                print("Opción no válida")
+    print("\nDestinos disponibles:")
+    gestionar_destinos()
+    id_destino = input("Ingrese el ID del destino: ").strip()
+    if not id_destino.isdigit():
+        print("ID de destino no válido.")
+        return
 
-    elif opcion == "3":        
-        while True:
-            print("\n -- REGISTRAR VENTAS -- ")
-            print("1. Ingrese cliente")
-            print("2. ¿Es empresa?")
-            print("3. Ingrese destino ")
-            print("4. Ingrese vuelo")
-            print("5. Ingrese clase")
-            print("6. Ingrese fecha")
-            print("7. Ingrese costo")
-            print("8. Volver al menú principal")
-            subopcion = input ("Seleccione una opción: ")
-            if subopcion == "1":
-                print("Cliente")
-                print("Ingrese DNI de cliente: ...")
-                print("Ingrese correo electrónico de cliente: ...")            
-            elif subopcion == "2":
-                print("Empresa")
-                print("Ingrese CUIL de empresa: ...")
-            elif subopcion == "3":
-                print("Destino")
-                print("Ingrese destino: ...")
-            elif subopcion == "4":
-                print("Vuelo")
-                print("Ingrese si es Ida / Ida y vuelta: ...")
-            elif subopcion == "5":
-                print("Clase")
-                print("Ingrese Económica / Business / Primera Clase: ...")
-            elif subopcion == "6":
-                print("Fecha de vuelo")
-                print("Ingrese fecha de vuelo: ...")
-                print("Ingrese fecha de venta: ...") ## Preguntar si se puede capturar la fecha directamente sin que se ingrese
-            elif subopcion == "7":
-                print("Costo de pasajes")
-                print("Ingrese costo total: ...")            
-            elif subopcion == "8":
-                print("Volviendo al menú principal")
-                break
-            else:
-                print("Opción no válida")
+    costo_total = input("Ingrese el costo total: ").strip()
+    try:
+        costo_total = float(costo_total)
+    except ValueError:
+        print("Costo total inválido.")
+        return
 
-    elif opcion == "4":
-        while True:
-            print("\n-- CONSULTAR VENTAS --")
-            print("1. Ver todas las ventas")
-            print("2. Ventas por cliente")
-            print("3. Ventas por periodo")
-            print("4. Ventas por destino")
-            print("5. Ventas por estado (Activa / Anulada)")
-            print("5. Volver al menú principal")
-            subopcion = input("Seleccione una opción: ")
-            if subopcion == "1":
-                print("Ver todas las ventas")
-            elif subopcion == "2":
-                print("Ventas por cliente")
-            elif subopcion == "3":
-                print("Ventas por periodo")
-            elif subopcion == "4":
-                print("Ventas por destino")
-            elif subopcion == "5":
-                print("Ventas por estado (Activa / Anulada)")
-            elif subopcion == "5":
-                print("Volviendo al menú principal")
-                break
-            else:
-                print("Opción no válida")
+    registrar_venta(id_cliente, id_destino, costo_total)
 
-    elif opcion == "5":
-        print("\n -- BOTON DE ARREPENTIEMIENTO -- ")
+# Punto de entrada principal del sistema
+def main():
+    print("Bienvenidos a SkyRoute - Sistema de Gestión de Pasajes")
+    salir = False
+    while not salir:
+        opcion = menu_principal()
 
-    elif opcion == "6":
-        print("Saliendo del sistema. ¡Gracias por usar SkyRoute!")
-        salir = True
+        if opcion == "1":
+            gestionar_clientes()
+        elif opcion == "2":
+            listar_destinos()
+        elif opcion == "3":
+            gestionar_venta()
+        elif opcion == "4":
+            consultar_ventas()
+        elif opcion == "5":
+            boton_arrepentimiento()
+        elif opcion == "6":
+            print("Saliendo del sistema. ¡Gracias por usar SkyRoute!")
+            salir = True
+        else:
+            print("Opción no válida. Intente nuevamente.")
 
-    else:
-        print("Opción no válida. Intente nuevamente.")
-
-
+if __name__ == "__main__":
+    main()
