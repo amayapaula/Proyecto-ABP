@@ -33,12 +33,12 @@ destinos.py
  Archivo de conexión a la base de datos MySQL.
 -  main.py
 Contiene el menú principal de navegación del sistema. Sus funcionalidades incluyen:
-- Gestionar Clientes: Ver, agregar, modificar, eliminar y buscar clientes (agencias o personas).
-- Gestionar Destinos: Ver destinos disponibles y agregar nuevos.
-- Registrar Ventas: Registrar una venta seleccionando cliente, destino, clase, tipo de vuelo y costo.
-- Consultar Ventas:  Filtrar ventas por cliente, destino, estado o período.
-- Botón de Arrepentimiento: Permite anular una venta activa registrada dentro de los últimos 60 días hábiles.
-- Salir:  Finaliza la ejecución del sistema.
+ Gestionar Clientes: Ver, agregar, modificar, eliminar y buscar clientes (agencias o personas).
+ Gestionar Destinos: Ver destinos disponibles y agregar nuevos.
+ Registrar Ventas: Registrar una venta seleccionando cliente, destino, clase, tipo de vuelo y costo.
+ Consultar Ventas:  Filtrar ventas por cliente, destino, estado o período.
+ Botón de Arrepentimiento: Permite anular una venta activa registrada dentro de los últimos 60 días hábiles.
+ Salir:  Finaliza la ejecución del sistema.
 
 **Base de Datos**
 Carpeta: schema-sql-database. Contiene los archivos necesarios para crear, poblar y consultar la base de datos utilizada por el sistema de gestión de pasajes de SkyRoute S.R.L.
@@ -50,19 +50,19 @@ Carpeta: schema-sql-database. Contiene los archivos necesarios para crear, pobla
 
 - consultas_sql.txt
  Contiene un conjunto de consultas SQL (SELECT) orientadas a recuperar información útil del sistema.
-- Listado de todos los clientes.
-- Ventas realizadas en una fecha específica.
-- Última venta registrada por cada cliente.
-- Destinos que comienzan con la letra “S”.
-- Cantidad de ventas por país.
+ Listado de todos los clientes.
+ Ventas realizadas en una fecha específica.
+ Última venta registrada por cada cliente.
+ Destinos que comienzan con la letra “S”.
+ Cantidad de ventas por país.
 
 - datos_sql.txt
  Incluye sentencias INSERT INTO para poblar la base de datos con datos de ejemplo.
-- 10 agencias (clientes tipo "Agencia").
-- 12 personas particulares (clientes tipo "Persona").
-- 4 destinos nacionales (ciudad, país, costo base).
-- 5 ventas simuladas (cliente, destino, fecha, costo, estado).
+ 10 agencias (clientes tipo "Agencia").
+ 12 personas particulares (clientes tipo "Persona").
+ 4 destinos nacionales (ciudad, país, costo base).
+ 5 ventas simuladas (cliente, destino, fecha, costo, estado).
 
 **Ética y Deontología Profesional.**
-- readme-etica.md
+- readme-etica.md: 
  Este documento busca contar un poco sobre los aspectos legales y éticos que tuvimos en cuenta al desarrollar nuestro sistema. Hablamos de leyes importantes como la Ley 24.240, que protege los derechos del consumidor (por eso incluimos el botón de arrepentimiento), la Ley 25.326, que trata sobre el uso responsable de los datos personales, y la Ley 11.723, que nos recuerda respetar la propiedad intelectual, tanto nuestra como la de otros.Creemos que tener en cuenta estas normas no solo nos ayuda a hacer un sistema más completo, sino también a cuidar a todas las personas que lo van a usar: los clientes, las agencias y hasta nosotros mismos como desarrolladores.
