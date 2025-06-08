@@ -1,0 +1,35 @@
+CONSULTAS SQL - SISTEMA SKYROUTE S.R.L.  
+
+1. Listar todos los clientes registrados en la base de datos.
+Esta consulta recupera todos los datos de la tabla cliente.
+
+SELECT * FROM sky_route.cliente;
+
+2. Mostrar todas las ventas realizadas en una fecha específica.
+En este ejemplo, la fecha consultada es el 08 de junio de 2025, aunque se pueden modificar las fechas según el caso.
+
+SELECT * FROM sky_route.venta
+WHERE fecha_venta = '2025-06-08';
+
+3. Obtener la última venta realizada por cada cliente.
+Esta consulta agrupa las ventas por cliente y obtiene la fecha de su venta más reciente.
+
+SELECT  id_cliente, 
+    MAX(fecha_venta) AS ultima_venta
+FROM sky_route.venta
+GROUP BY id_cliente;
+
+4. Listar todos los destinos que empiezan con la letra “S”.
+Busca coincidencias en el nombre de la ciudad o país que comienzan con "S". El símbolo % indica cualquier cantidad de caracteres posteriores.
+
+SELECT * FROM sky_route.destino
+WHERE paisLIKE 'S%';
+
+5. Mostrar cuántas ventas se realizaron por país.
+Esta consulta une las tablas venta y destino para contar la cantidad de ventas según país de destino. Agrupa por país y ordena de mayor a menor cantidad de ventas.
+
+SELECT d.pais, COUNT(*) AS cantidad_ventas
+FROM sky_route.venta v
+JOIN sky_route.destino d ON v.id_destino = d.id_destino
+GROUP BY d.pais
+ORDER BY cantidad_ventas DESC;
