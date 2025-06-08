@@ -1,0 +1,40 @@
+INSERCIÓN DE DATOS - SISTEMA SKYROUTE S.R.L. 
+
+INSERT INTO cliente (razon_social, cuit, correo_contacto, tipo_cliente) VALUES
+('Agencia TravelOne S.A.', '30-11112222-1', 'contacto@travelone.com', 'Agencia'),
+('Vuelos del Sur SRL', '30-22223333-2', 'info@vuelosdelsur.com', 'Agencia'),
+('Turismo Total SA', '30-33334444-3', 'ventas@turismototal.com', 'Agencia'),
+('Agencia Cielos Abiertos', '30-44445555-4', 'cielos@abiertos.com', 'Agencia'),
+('Latam Tour SRL', '30-55556666-5', 'contacto@latamtour.com', 'Agencia'),
+('Viajeros Unidos SA', '30-66667777-6', 'reservas@viajerosunidos.com', 'Agencia'),
+('TourExpress SRL', '30-77778888-7', 'info@tourexpress.com', 'Agencia'),
+('Mundo Aventura SA', '30-88889999-8', 'ventas@mundoaventura.com', 'Agencia'),
+('Agencia Horizontes', '30-99990000-9', 'contacto@horizontes.com', 'Agencia'),
+('Viaje Seguro SRL', '30-10101010-0', 'soporte@viajeseguro.com', 'Agencia');
+
+Insertar personas (clientes particulares)
+INSERT INTO cliente (razon_social, cuit, correo_contacto, tipo_cliente) VALUES
+('Juan Pérez', '21-12345678-1', 'juan.perez@gmail.com', 'Persona'),
+('María Gómez', '27-87654321-0', 'maria.gomez@hotmail.com', 'Persona'),
+('Carlos López', '20-12345678-1', 'carlos.lopez@gmail.com', 'Persona'),
+('Ana Torres', '27-23456789-2', 'ana.torres@yahoo.com', 'Persona'),
+('Marcos Gómez', '20-34567890-3', 'marcos.gomez@hotmail.com', 'Persona'),
+('Lucía Ramírez', '27-45678901-4', 'lucia.ramirez@gmail.com', 'Persona'),
+('Sofía Díaz', '27-56789012-5', 'sofia.diaz@gmail.com', 'Persona'),
+('Andrés Fernández', '20-67890123-6', 'andres.fernandez@gmail.com', 'Persona'),
+('Romina Castro', '27-78901234-7', 'romina.castro@hotmail.com', 'Persona'),
+('Pedro Sánchez', '20-89012345-8', 'pedro.sanchez@yahoo.com', 'Persona'),
+('Laura Herrera', '27-90123456-9', 'laura.herrera@gmail.com', 'Persona'),
+('Diego Núñez', '20-10234567-0', 'diego.nunez@gmail.com', 'Persona');
+
+INSERT INTO destino (ciudad, pais, costo_base) VALUES
+('Cordoba', 'Argentina', 35000),
+('Buenos Aires', 'Argentina', 10000),
+('Salta', 'Argentina', 2000),
+('San Luis', 'Argentina', 5000);
+
+INSERT INTO venta (id_cliente, id_destino, fecha_venta, costo_total, estado) VALUES
+(28, 1, '2025-06-08', 35000, 'Activa'),
+(29, 2, '2025-06-07', 10000,'Activa'),
+(30, 3, '2025-06-06', 2000, 'Activa'),
+(31, 4, '2025-06-05', 5000, 'Activa'),
