@@ -45,19 +45,19 @@ def gestionar_destinos():
         print("1. Ver destinos disponibles")
         print("2. Agregar nuevo destino")
         print("3. Volver al menú principal")
-        opcion = input("Seleccione una opción: ")
-        
+        opcion = input("Seleccione una opción: ").strip()
+
         if opcion == "1":
             listar_destinos()
         elif opcion == "2":
             ciudad = input("Ingrese ciudad: ").strip()
             pais = input("Ingrese país: ").strip()
             try:
-                costo_base = float(input("Ingrese costo base: "))
+                costo_base = float(input("Ingrese costo base: ").strip())
                 agregar_destino(ciudad, pais, costo_base)
             except ValueError:
-                print("El costo base debe ser un número.")
+                print("El costo base debe ser un número válido.")
         elif opcion == "3":
             break
         else:
-            print("Opción no válida.")
+            print("Opción no válida. Intente nuevamente.")

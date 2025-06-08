@@ -1,6 +1,6 @@
 """
 SkyRoute S.R.L. - Sistema de Gestión de Pasajes
-Versión Prototipo - Evidencia de Aprendizaje 2 
+Versión Prototipo - Evidencia de Aprendizaje 3
 
 Propósito del sistema
 Este sistema fue desarrollado para simular el funcionamiento de una aplicación de gestión de pasajes aéreos para la empresa SkyRoute S.R.L. 
@@ -51,23 +51,22 @@ def gestionar_clientes():
         print("\n-- GESTIONAR CLIENTES --")
         print("1. Ver lista de clientes")
         print("2. Agregar nuevo cliente")
-        print("3. Agregar nueva empresa")
-        print("4. Modificar cliente")
-        print("5. Eliminar cliente")
-        print("6. Buscar clientes")
-        print("7. Volver al menú principal")
+        print("3. Modificar cliente")
+        print("4. Eliminar cliente")
+        print("5. Buscar clientes")
+        print("6. Volver al menú principal")
         subopcion = input("Seleccione una opción: ")
         if subopcion == "1":
             ver_clientes()
         elif subopcion == "2":
             agregar_cliente()
-        elif subopcion == "4":
+        elif subopcion == "3":
             modificar_cliente()
-        elif subopcion == "5":
+        elif subopcion == "4":
             eliminar_cliente()
-        elif subopcion == "6":
+        elif subopcion == "5":
             buscar_cliente_por_dni()
-        elif subopcion == "7":
+        elif subopcion == "6":
             break
         else:
             print("Opción no válida.")
@@ -83,7 +82,7 @@ def gestionar_venta():
         return
 
     print("\nDestinos disponibles:")
-    gestionar_destinos()
+    listar_destinos()
     id_destino = input("Ingrese el ID del destino: ").strip()
     if not id_destino.isdigit():
         print("ID de destino no válido.")
@@ -96,7 +95,7 @@ def gestionar_venta():
         print("Costo total inválido.")
         return
 
-    registrar_venta(id_cliente, id_destino, costo_total)
+    registrar_venta(int(id_cliente), int(id_destino), costo_total)
 
 # Punto de entrada principal del sistema
 def main():
@@ -108,7 +107,7 @@ def main():
         if opcion == "1":
             gestionar_clientes()
         elif opcion == "2":
-            listar_destinos()
+            gestionar_destinos()
         elif opcion == "3":
             gestionar_venta()
         elif opcion == "4":
