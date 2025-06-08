@@ -3,7 +3,7 @@ En este espacio que Ética y Deontología nos brinda, explicaremos algunos aspec
 
 1. Implementación del Botón de Arrepentimiento a nivel programación y base de datos, pudiendo llevar a la práctica reemplazando días por minutos, cada grupo puede sugerir la escala.
 - Ley 24.240 de defensa del consumidor  
-La funcionalidad del Botón de Arrepentimiento fue incorporada tanto a nivel de programación como en la base de datos. Está basada en la Ley 24.240 de Defensa del Consumidor, que establece el derecho de los usuarios a cancelar una compra dentro de un plazo de hasta 60 días (en el caso de servicios como pasajes aéreos, aplicando normativa específica). Sin embargo, para poder probar correctamente el funcionamiento del sistema y simular anulaciones sin tener que esperar días reales, como grupo decidimos trabajar con una escala de tiempo reducida a 5 minutos. Esto nos permitió validar que el sistema:
+La funcionalidad del Botón de Arrepentimiento fue incorporada tanto a nivel de programación como en la base de datos. Está basada en la Ley 24.240 de Defensa del Consumidor, que establece el derecho de los usuarios a cancelar una compra dentro de un plazo de hasta 60 días (en el caso de servicios como pasajes aéreos, aplicando normativa específica). Sin embargo, para poder probar correctamente el funcionamiento del sistema y simular anulaciones sin tener que esperar días reales, como grupo decidimos trabajar con una escala de tiempo reducida a 60 segundos. Esto nos permitió validar que el sistema:
 Consulta las ventas realizadas recientemente.  
 Permite seleccionar una venta y anularla.  
 Cambia su estado a "Anulada".  
