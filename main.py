@@ -18,7 +18,6 @@ Integrantes del grupo
 - Amaya, Paula. DNI: 40.403.171
 - Martinez, Cristian. DNI: 31.819.114
 - Guillermo, Bianco DNI: 35.669.345
-- Alfonsina, Abrego DNI: 30.971.691
 - Valeria, Cortez DNI: 29.768.588
 """
 
